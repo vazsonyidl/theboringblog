@@ -1,0 +1,2 @@
+# Ignore db files for sqlite
+db.sqlite3
