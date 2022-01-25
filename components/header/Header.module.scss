@@ -1,0 +1,20 @@
+@import 'styles/colors';
+
+.header {
+  background-color: $primary-3;
+  color: $white;
+
+  height: 3rem;
+  display: flex;
+  align-items: center;
+
+  .linkContainer {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+
+      a {
+        padding: 12px;
+      }
+  }
+}
