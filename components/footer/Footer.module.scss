@@ -1,0 +1,10 @@
+@import 'styles/colors';
+
+.footer {
+    background-color: $primary-3;
+
+    .description {
+        display: flex;
+        justify-content: center;
+    }
+}
