@@ -1,21 +1,31 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Header from 'components/header/Header'
-import styles from 'styles/Home.module.css'
+import Head from 'next/head';
 
-const Home: NextPage = () => {
+import Header from 'components/header/Header';
+import Footer from 'components/footer/Footer';
+import PostList from 'components/post/PostList';
+import { IPost } from 'interfaces/post.interface';
+import { navigationElements } from 'constants/navigation.const';
+import { posts } from 'constants/posts.const';
+
+export default function Home({posts}: {posts: Array<IPost>}) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-
-      <main className={styles.main}>
-        Works.
+      <Header navigationElements={navigationElements} />
+      <main>
+        <PostList posts={posts} />
       </main>
-    </div>
-  )
+      <Footer />
+    </>
+  );
 }
 
-export default Home
+export async function getStaticProps() {
+  return {
+    props: {
+      posts,
+    },
+  }
+}
