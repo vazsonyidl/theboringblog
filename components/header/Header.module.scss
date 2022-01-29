@@ -1,0 +1,27 @@
+@import 'styles/colors';
+
+.header {
+  background-color: $primary-3;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  border-bottom: 2px solid #504e4e;
+
+  .linkContainer {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+
+      a {
+        padding: 0 8px;
+
+        &:not(:last-child) {
+          border-right: 2px solid #504e4e;
+        }
+      }
+  }
+
+  .logo {
+    padding: 0;
+  }
+}
