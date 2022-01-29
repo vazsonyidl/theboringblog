@@ -1,10 +1,10 @@
 export const navigationElements = [
   {
-    displayName: 'How-to',
-    url: 'how-to',
+    displayName: 'Posts',
+    url: '',
   },
   {
-    displayName: 'Posts',
-    url: 'posts',
-  },
+    displayName: 'About',
+    url: 'about',
+  },  
 ];
