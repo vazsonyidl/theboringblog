@@ -1,6 +1,6 @@
 .itemContainer {
   border-bottom: 1px solid #504e4e;
-  max-width: 100vw;
+  max-width: calc(100vw - 16px);
   padding: 4px;
   cursor: pointer;
 
