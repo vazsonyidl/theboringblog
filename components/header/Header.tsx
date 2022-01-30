@@ -2,6 +2,7 @@ import styles from './Header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { NavigationElements } from 'interfaces/navigation.interface';
+import { cloudflareLoader } from 'utils/img-loader.util';
 
 export default function Header({
   navigationElements,
@@ -10,10 +11,21 @@ export default function Header({
 }) {
   return (
     <header className={styles.header}>
-      <section id="site-logo" aria-label="site logo" role="img" className={styles.logo}>
+      <section
+        id="site-logo"
+        aria-label="site logo"
+        role="img"
+        className={styles.logo}
+      >
         <Link href="/">
           <a>
-            <Image src="/static/logo.svg" width={30} height={30} />
+            <Image
+              src="/static/logo.svg"
+              width={30}
+              height={30}
+              alt="sloth logo"
+              loader={cloudflareLoader}
+            />
           </a>
         </Link>
       </section>

@@ -1,0 +1,29 @@
+.detailContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        text-align: center;
+    }
+
+    .publishDate {
+        text-align: end;
+    }
+
+    .contentContainer {
+        .subTitle {
+            margin-bottom: 8px;
+        }
+
+        .subContent {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (min-device-width: 1200px) {
+    .contentContainer {
+      max-width: 50vw;
+    }
+  }

@@ -12,7 +12,7 @@ export default function Post({ post }: { post: IPost }) {
   return (
     <section className={styles.itemContainer} onClick={onPostClick}>
       <h3 className={styles.title}>{post.title}</h3>
-      <section className={styles.intro}>{post.intro}</section>
+      <p className={styles.intro}>{post.intro}</p>
     </section>
   );
 }
