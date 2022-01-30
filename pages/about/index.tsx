@@ -33,7 +33,8 @@ export default function AboutPage() {
           <h3>One important note</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
             All the information you can find here is dedicated for long term
-            (more than 10 years, ideally aroung 20 years) <strong>investment</strong>.
+            (more than 10 years, ideally aroung 20 years){' '}
+            <strong>investment</strong>.
           </p>
           <h3>Bottom line</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
