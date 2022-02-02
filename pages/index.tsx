@@ -12,6 +12,8 @@ export default function Home({ posts }: { posts: Array<IPost> }) {
   return (
     <>
       <Head>
+        <title>Longterm earnings</title>
+        <meta property="og:title" content="Longterm earnings" key="title" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
