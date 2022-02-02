@@ -10,7 +10,7 @@ export default function Post({ post }: { post: IPost }) {
   };
 
   return (
-    <section className={styles.itemContainer} onClick={onPostClick}>
+    <section className={styles.itemContainer} onClick={onPostClick} role='cell'>
       <h3 className={styles.title}>{post.title}</h3>
       <p className={styles.intro}>{post.intro}</p>
     </section>

@@ -18,7 +18,7 @@ export default function Header({
         className={styles.logo}
       >
         <Link href="/">
-          <a>
+          <a role='link' aria-label='Home navigation button'>
             <Logo />
           </a>
         </Link>
