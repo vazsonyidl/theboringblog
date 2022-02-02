@@ -1,6 +1,5 @@
 @import 'colors';
 @import 'variables';
-@import url('//fonts.googleapis.com/css?family=Oswald');
 
 // Target the root div - which wraps the whole application
 #__next {
@@ -15,7 +14,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: $primary-3;
-  font-family: Oswald, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   font-size: $root-font-size;
 }
