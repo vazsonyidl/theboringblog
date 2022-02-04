@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import React from 'react';
+import { useRouter } from 'next/router';
 import { IPost } from 'interfaces/post.interface';
 import styles from './PostListItem.module.scss';
-import { useRouter } from 'next/router';
 
 export default function Post({ post }: { post: IPost }) {
   const router = useRouter();
@@ -9,10 +9,24 @@ export default function Post({ post }: { post: IPost }) {
     router.push(`/posts/${post.id}`);
   };
 
+  const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Enter') router.push(`/posts/${post.id}`);
+  };
+
   return (
-    <section className={styles.itemContainer} onClick={onPostClick} role='cell'>
-      <h3 className={styles.title}>{post.title}</h3>
-      <p className={styles.intro}>{post.intro}</p>
+    <section
+      className={styles.itemContainer}
+      onClick={onPostClick}
+      onKeyDown={onKeyDown}
+      tabIndex={0}
+      role="rowgroup"
+    >
+      <h3 role="row" className={styles.title}>
+        <span role="cell">{post.title}</span>
+      </h3>
+      <p role="row" className={styles.intro}>
+        <span role="cell">{post.intro}</span>
+      </p>
     </section>
   );
 }
