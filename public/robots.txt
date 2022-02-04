@@ -1,0 +1,4 @@
+# Allow to crawl all pages
+
+User-agent: *
+Allow: /

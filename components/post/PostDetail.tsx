@@ -9,7 +9,7 @@ export default function PostDetail({ postDetail }: { postDetail: IPost }) {
   return (
     <section className={styles.detailContainer}>
       <h1 className={styles.title}>{postDetail.title}</h1>
-      <p>
+      <p className={styles.intro}>
         <i>{postDetail.intro}</i>
       </p>
       <article className={styles.contentContainer}>

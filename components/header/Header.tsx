@@ -18,7 +18,7 @@ export default function Header({
         className={styles.logo}
       >
         <Link href="/">
-          <a>
+          <a role="button" aria-label="Home navigation button" tabIndex={0}>
             <Logo />
           </a>
         </Link>
@@ -30,7 +30,9 @@ export default function Header({
       >
         {navigationElements.map((navigationElement, index) => (
           <Link href={`/${navigationElement.url}`} key={index}>
-            {navigationElement.displayName}
+            <a role="button" aria-label={navigationElement.displayName} tabIndex={0}>
+              {navigationElement.displayName}
+            </a>
           </Link>
         ))}
       </section>
