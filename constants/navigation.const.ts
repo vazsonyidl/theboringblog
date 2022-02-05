@@ -6,5 +6,9 @@ export const navigationElements = [
   {
     displayName: 'About',
     url: 'about',
+  },    
+  {
+    displayName: 'Disclaimer',
+    url: 'disclaimer',
   },  
 ];
