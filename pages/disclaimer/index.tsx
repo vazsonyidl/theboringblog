@@ -13,7 +13,7 @@ export default function DisclaimerPage() {
             <em>longterminco.me</em> is not a registered investment, legal advisor
             or broker. Any investment opinions, analysis or tip expressed by
             this page is just for informational purposes and intended as
-            an educational material. All of the ifnromation on the page is from
+            an educational material. All of the information on the page is from
             personal research and experience of the owner of the website.
           </p>
           <h3>Do your own research</h3>

@@ -38,7 +38,7 @@ export default function AboutPage() {
             have started this journey and how I pick companies for myself. From
             this, you can draw your own the consequences.
           </p>
-          <h3>How much do I expect?</h3>
+          <h3>What do I expect?</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
             I do not want to predict numbers that will turn out not to be true,
             and the future is unpredictable - almost. Based on historical data,
