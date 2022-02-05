@@ -10,11 +10,6 @@
 
   .title {
     text-align: center;
-    @include maxWidth;
-  }
-
-  .intro {
-    @include maxWidth;
   }
 
   .publishDate {
@@ -33,7 +28,7 @@
 }
 
 @media screen and (min-device-width: 1200px) {
-  .contentContainer {
+  .contentContainer, .intro, .title {
     @include maxWidth;
   }
 }
