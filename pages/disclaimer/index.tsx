@@ -10,10 +10,10 @@ export default function DisclaimerPage() {
         <section role="textbox" className={styles.contentContainer}>
           <h3>Disclaimer</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
-            longtermearnings.com is not a registered investment, legal advisor
+            <em>longterminco.me</em> is not a registered investment, legal advisor
             or broker. Any investment opinions, analysis or tip expressed by
             this page is just for informational purposes and intended as
-            educational material. All of the materials on the page is from
+            an educational material. All of the ifnromation on the page is from
             personal research and experience of the owner of the website.
           </p>
           <h3>Do your own research</h3>
