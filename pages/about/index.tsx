@@ -58,8 +58,10 @@ export default function AboutPage() {
           </p>
           <h3>Contact</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
-            If you have any questions, feel free to reach me out on Twitter or
-            in e-mail.
+            If you have any questions, feel free to reach me out via
+            <a href="mailto:help@longterminco.me">e-mail</a>. Or if you like
+            more the copy-paste stuff, then here it is:
+            <em>help@longterminco.me</em>.
           </p>
         </section>
       </main>
