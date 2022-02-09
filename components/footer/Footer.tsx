@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer role="term" className={styles.footer}>
       <section className={styles.description}>
-        Made with coffee and Next.js.
+        Always do your own research
       </section>
     </footer>
   );
