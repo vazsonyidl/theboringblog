@@ -56,13 +56,6 @@ export default function AboutPage() {
             year. But this blog’s main goal is the traditional, long term
             dividend investment.
           </p>
-          <h3>Contact</h3>
-          <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
-            If you have any questions, feel free to reach me out via
-            <a href="mailto:help@longterminco.me">e-mail</a>. Or if you like
-            more the copy-paste stuff, then here it is:
-            <em>help@longterminco.me</em>.
-          </p>
         </section>
       </main>
       <Footer />
