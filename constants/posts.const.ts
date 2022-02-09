@@ -50,21 +50,67 @@ export const posts: Array<IPost> = [
       },
       {
         title: 'How do I plan to earn from this?',
-        content: 'To start with, and put simply: from the dividend. The dividend itself is the money a company pays from its profit to its shareholders. There are several companies out there with a long (I mean more than 50 years) dividend payout history. This will be backbone for our long term investment process.',
+        content:
+          'To start with, and put simply: from the dividend. The dividend itself is the money a company pays from its profit to its shareholders. There are several companies out there with a long (I mean more than 50 years) dividend payout history. This will be backbone for our long term investment process.',
       },
       {
         title: 'Okay, but which companies',
-        content: 'you may ask. It is a perfect question. There are several metrics which guides through the process of choosing a worthy company. The key concept is: high returns = high quality + high current yield + high growth of yield. Stay tuned, because I will share my evaluation of companies when I buy shares from one of them.',
+        content:
+          'you may ask. It is a perfect question. There are several metrics which guides through the process of choosing a worthy company. The key concept is: high returns = high quality + high current yield + high growth of yield. Stay tuned, because I will share my evaluation of companies when I buy shares from one of them.',
       },
       {
         title: 'Is it applicable at any time?',
-        content: 'I try to measure companies worth-of-buy metrics always compared to some other key metrics in the industry, like Standard and Poor’s average numbers or the long term US bonds yield just to mention a few. This makes measurement a bit easier, as you may encounter the posts and information here later in time. If I tell you that I bought company XYZ in February, 2022 that information wouldn’t be so useful for you 2 years later.',
+        content:
+          'I try to measure companies worth-of-buy metrics always compared to some other key metrics in the industry, like Standard and Poor’s average numbers or the long term US bonds yield just to mention a few. This makes measurement a bit easier, as you may encounter the posts and information here later in time. If I tell you that I bought company XYZ in February, 2022 that information wouldn’t be so useful for you 2 years later.',
       },
       {
         title: 'Recommended references',
-        content: 'The Single Best Investment by Lowell Miller'
-      }
+        content: 'The Single Best Investment by Lowell Miller',
+      },
     ],
     published: '06.02.2022',
+  },
+
+  // Post 3
+  {
+    id: 3,
+    title: 'Behaviour - the key factor',
+    intro:
+      'What are the key characteristic that helps you succeed during ups and down?',
+    content: [
+      {
+        title: 'Intro',
+        content:
+          'Before jumping into the rules and the process to pick potential candidates, there is another important thing. In my opinion, this will be one of the most useful one. The behaviour. Without these characteristic, people can bend easily with the wind and give up an otherwise rock solid plan to build a compounding machine. But enough from small-talk, jump into the details and review them step by step!',
+      },
+      {
+        title: 'Be adoptable',
+        content: `I think it speaks for itself. The times fly by as well as all the previous metrics, tips and analysis. One of the crucial mindset one has to have when fighting through the enormous amount of information in this area is to be adoptable. Metric, numbers and key factors measured in 1992, during the dotcom bubble or around the 2008 crisis will not be helpful now. 
+
+        To have a good overall view, one must have to check the valuation of a company based on the current trends - both the industry of which the company operates as well as the overall market.`,
+      },
+      {
+        title: 'Do not buy if there is no good option',
+        content:
+          'This will rarely be a case, because there will always be another option. But if not, do not buy! Simply just keep your money as a free cash (maybe on your account on something like that) because the sun will rise tomorrow, there will be several news and what might be priced ‘high’ today maybe will be better 3 weeks from now.',
+      },
+      {
+        title: 'Do not "fall in love"',
+        content:
+          'At least not with companies! People usually like to favor one company over another just because it is fancy or more popular. The sad thing is even a company is hyped can have really bad results if measured with your long-term return eyeglasses on. My suggestion is not to fall in love with brand names, possible future outcomes, Twitter posts.',
+      },
+      {
+        title: 'Do not want to beat the market',
+        content:
+          'I wish I could have Morgan Freeman’s record as he is whispering this phrase, on repeat. Beating the market is something that you should never sign up for. You do not chase high return from selling TSLA short before Elon Musk’s latest Tweet. You rather want a stable, reliable compounding machine on top of which you can plan a life.',
+      },
+      {
+        title: 'Footnote',
+        content: `Please always do your own research when buying! These are just the key characteristics according to my perspective - some of them cited from the Single Best Investment book.
+        
+        Never forget: high returns = high quality + high current yield + growth of yield.`,
+      },
+    ],
+    published: '09.02.2022',
   },
 ];

@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-        <meta property="og:title" content="Longterm earnings" key="title" />
+        <meta property="og:title" content="Longterm income" key="title" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
