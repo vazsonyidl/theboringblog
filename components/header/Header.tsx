@@ -35,6 +35,9 @@ export default function Header({
             </a>
           </Link>
         ))}
+        <Link href='/demo'>
+          <a role='button'>Demo</a>
+        </Link>
       </section>
     </header>
   );
