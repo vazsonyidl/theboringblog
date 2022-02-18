@@ -11,7 +11,7 @@ import { posts } from 'constants/posts.const';
 import { getAllPosts, getPostBySlug } from 'lib/api';
 import { markdownToHtml } from 'lib/markdownToHtml';
 
-export default function PostDetailPage({post}) {
+export default function PostDetailPage({post}: any) {
   return (
     <>
       <Header navigationElements={navigationElements} />
