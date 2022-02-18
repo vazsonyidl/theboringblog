@@ -8,7 +8,7 @@ import { IPost } from 'interfaces/post.interface';
 
 import { navigationElements } from 'constants/navigation.const';
 import { posts } from 'constants/posts.const';
-import { getPostBySlug } from 'lib/api';
+import { getAllPosts, getPostBySlug } from 'lib/api';
 import { markdownToHtml } from 'lib/markdownToHtml';
 
 export default function PostDetailPage({post}) {
@@ -22,26 +22,27 @@ export default function PostDetailPage({post}) {
 }
 
 export async function getStaticProps({params}: {params: any}) {
-  const {data, content} = getPostBySlug(params?.slug);
+  const {meta, content} = getPostBySlug(params?.slug);
   
   const htmlContent = await markdownToHtml(content || '');
-  console.log(htmlContent);
   return {
     props: {
       post: {
         htmlContent,
-        meta: data
+        meta: meta
       }
     }
   }
 }
 
-export async function getStaticPaths(params:type) {
+export async function getStaticPaths() {
+  const posts = getAllPosts();
+
   return {
-    paths: [1,2,3].map((el) => {
+    paths: posts.map((post) => {
       return {
         params: {
-          slug: el.toString(),
+          slug: post.slug,
         },
       }
     }),
