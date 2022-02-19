@@ -28,6 +28,7 @@ class MyDocument extends Document {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <meta name='description' content='How to earn passive income during a long term period? How to manage your long term investment? The long term earnings blog give you insights!'/>   
+        <base target='_blank' rel="noopener"/>
       </Head>
         <body>
           <Main />

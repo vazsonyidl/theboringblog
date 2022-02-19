@@ -3,11 +3,10 @@ import { parse } from 'date-fns';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import PostList from 'components/post/PostList';
-import { IPost } from 'interfaces/post.interface';
 import { navigationElements } from 'constants/navigation.const';
-import { posts } from 'constants/posts.const';
+import { getAllPosts } from 'lib/api';
 
-export default function Home({ posts }: { posts: Array<IPost> }) {
+export default function Home({posts}: any) {
   return (
     <>
       <Header navigationElements={navigationElements} />
@@ -20,15 +19,10 @@ export default function Home({ posts }: { posts: Array<IPost> }) {
 }
 
 export async function getStaticProps() {
-  const _posts = posts.sort(
-    (a, b) =>
-      parse(b.published, 'dd.MM.yyyy', new Date()).getTime() -
-      parse(a.published, 'dd.MM.yyyy', new Date()).getTime()
-  );
-
+  const allPosts = getAllPosts();
   return {
     props: {
-      posts: _posts,
+      posts: allPosts,
     },
   };
 }

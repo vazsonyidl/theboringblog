@@ -7,21 +7,39 @@
   height: 3rem;
   border-bottom: 2px solid #504e4e;
 
-  .linkContainer {
-      display: flex;
-      justify-content: center;
-      flex: 1;
+  .utilityContainer, .logoContainer {
+    padding: 12px 8px;
+    place-items: center;
+    display: grid;
 
-      a {
-        padding: 0 8px;
-
-        &:not(:last-child) {
-          border-right: 2px solid #504e4e;
-        }
-      }
+    a {
+      line-height: 0;
+    }
   }
+  
+  .navigationContainer {
+    display: flex;
+    justify-content: center;
+    flex: 1;
 
-  .logo {
-    padding: 0 8px;
+    a {
+      padding: 0 8px;
+
+      &:hover::after,
+      &.activeLink::after {
+        border-bottom: 1px solid #504e4e;
+        content: '';
+        position: relative;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        display: block;
+        clear: both;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid #504e4e;
+      }
+    }
   }
 }
