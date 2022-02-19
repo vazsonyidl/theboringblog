@@ -3,7 +3,6 @@ import { parse } from 'date-fns';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import PostList from 'components/post/PostList';
-import { IPost } from 'interfaces/post.interface';
 import { navigationElements } from 'constants/navigation.const';
 import { getAllPosts } from 'lib/api';
 

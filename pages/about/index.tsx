@@ -43,8 +43,8 @@ export default function AboutPage() {
             I do not want to predict numbers that will turn out not to be true,
             and the future is unpredictable - almost. Based on historical data,
             and the performance of companies during economical crisis, my
-            original plan is to retire at the age of 45. That is ~20 years from
-            now! I can say that with small amount of saved and invested money on
+            original plan is to retire at the age of 35. That is ~11 years from
+            now! I can say that with a not so huge amount of saved and invested money on
             a monthly bases people can dramatically help their future self’s
             financial status.
           </p>

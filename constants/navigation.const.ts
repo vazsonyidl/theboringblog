@@ -1,14 +1,14 @@
 export const navigationElements = [
   {
     displayName: 'Posts',
-    url: '',
+    url: '/',
   },
   {
     displayName: 'About',
-    url: 'about',
+    url: '/about',
   },    
   {
     displayName: 'Disclaimer',
-    url: 'disclaimer',
+    url: '/disclaimer',
   },  
 ];

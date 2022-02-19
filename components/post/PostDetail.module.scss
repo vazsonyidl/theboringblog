@@ -12,17 +12,21 @@
     text-align: center;
   }
 
+  .intro {
+    text-align: center;
+  }
+
   .publishDate {
     text-align: end;
   }
 
   .contentContainer {
-    .subTitle {
-      margin-bottom: 8px;
+    p {
+      margin: 0 0 16px;
     }
 
-    .subContent {
-      margin-top: 0;
+    h1, h2, h3, h4 {
+      margin: 24px 0 12px;
     }
   }
 }

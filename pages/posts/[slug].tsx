@@ -1,13 +1,9 @@
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
 import PostDetail from 'components/post/PostDetail';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 
-import { IPost } from 'interfaces/post.interface';
 
 import { navigationElements } from 'constants/navigation.const';
-import { posts } from 'constants/posts.const';
 import { getAllPosts, getPostBySlug } from 'lib/api';
 import { markdownToHtml } from 'lib/markdownToHtml';
 
