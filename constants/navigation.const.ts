@@ -1,7 +1,7 @@
 export const navigationElements = [
   {
     displayName: 'Posts',
-    url: '/',
+    url: '/posts',
   },
   {
     displayName: 'About',

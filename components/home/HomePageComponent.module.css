@@ -1,0 +1,29 @@
+.contentContainer {
+    display: grid;
+    height: 100%;
+    padding: 12px;
+}
+
+.contentContainer .contentRow {
+    display: flex;
+}
+
+.contentRow .content {
+    display: flex;
+    flex: 1;
+}
+
+.contentRow .description {
+    margin: 0 16px;
+}
+
+@media screen and (min-device-width: 1200px) {
+    .contentContainer {
+        padding: 48px 96px;
+    }
+    
+    .contentRow .gapContainer {
+        flex: 1;
+    }
+}
+
