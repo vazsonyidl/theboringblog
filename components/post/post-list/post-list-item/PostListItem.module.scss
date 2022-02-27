@@ -1,0 +1,29 @@
+.itemContainer {
+  display: grid;
+  grid-template-columns: 128px 128px 0.5fr 1fr;
+  grid-template-rows: minmax(0, 128px);
+  align-items: center;
+  border-top: 1px solid #504e4e;
+  padding: 4px;
+  cursor: pointer;
+
+  article {
+    max-height: 128px;
+    overflow: hidden;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-device-width: 1200px) {
+  .itemContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metaColumn {
+    display: none;
+  }
+}
