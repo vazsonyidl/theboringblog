@@ -1,7 +1,6 @@
-import PostDetail from 'components/post/PostDetail';
+import PostDetail from 'components/post/post-detail/PostDetail';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
-
 
 import { navigationElements } from 'constants/navigation.const';
 import { getAllPosts, getPostBySlug } from 'lib/api';

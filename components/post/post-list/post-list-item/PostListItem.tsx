@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { IPost } from 'interfaces/post.interface';
 import styles from './PostListItem.module.scss';
 
 export default function Post({ meta, slug }: any) {
@@ -21,12 +20,19 @@ export default function Post({ meta, slug }: any) {
       tabIndex={0}
       role="rowgroup"
     >
-      <h3 role="row" className={styles.title}>
-        <span role="cell">{meta.title}</span>
-      </h3>
-      <p role="row" className={styles.intro}>
-        <span role="cell">{meta.intro}</span>
-      </p>
+      <article className={styles.metaColumn}>{meta.published}</article>
+      <article className={styles.metaColumn}>{meta.type}</article>
+
+      <article>
+        <h3 role="row" className={styles.title}>
+          <span role="cell">{meta.title}</span>
+        </h3>
+      </article>
+      <article>
+        <p role="row" className={styles.intro}>
+          <span role="cell">{meta.intro}</span>
+        </p>
+      </article>
     </section>
   );
 }
