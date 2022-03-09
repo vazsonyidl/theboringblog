@@ -1,9 +1,13 @@
 .contentContainer {
     display: grid;
-    height: 100%;
     padding: 12px;
 }
-
+.contentContainer .title {
+    place-self: center;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.25;
+}
 .contentContainer .contentRow {
     display: flex;
 }
@@ -17,10 +21,11 @@
     margin: 0 16px;
 }
 
+.contentRow .description > h1 {
+    font-size: 1.5rem;
+}
+
 @media screen and (min-device-width: 1200px) {
-    .contentContainer {
-        padding: 48px 96px;
-    }
     
     .contentRow .gapContainer {
         flex: 1;
