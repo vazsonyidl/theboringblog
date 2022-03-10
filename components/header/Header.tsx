@@ -47,9 +47,7 @@ export default function Header({
         ))}
       </section>
       <section role="link" className={styles.utilityContainer}>
-        <a href="https://twitter.com/longterminco_me" role='button' aria-label='Twitter link in new tab'>
-          <Twitter />
-        </a>
+        <a className={styles.gradientButton} type='button' role='button' href='https://discord.gg/t4EspcHHdN'>Join Discord</a>
       </section>
     </header>
   );
