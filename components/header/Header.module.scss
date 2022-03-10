@@ -5,9 +5,10 @@
   display: flex;
   align-items: center;
   height: 3rem;
-  border-bottom: 2px solid #504e4e;
+  box-shadow: 0px 1px 2px #e4e5e6;
 
-  .utilityContainer, .logoContainer {
+  .utilityContainer,
+  .logoContainer {
     padding: 12px 8px;
     place-items: center;
     display: grid;
@@ -16,14 +17,16 @@
       line-height: 0;
     }
   }
-  
+
   .navigationContainer {
     display: flex;
     justify-content: center;
     flex: 1;
+    letter-spacing: 1.5px;
 
     a {
       padding: 0 8px;
+      color: #636363;
 
       &:hover::after,
       &.activeLink::after {
@@ -40,6 +43,23 @@
       &:not(:last-child) {
         border-right: 1px solid #504e4e;
       }
+    }
+  }
+
+  .utilityContainer {
+    .gradientButton {
+      display: block;
+      width: fit-content;
+      line-height: 1;
+      border: 0;
+      background-image: linear-gradient(
+        to right,
+        rgb(136, 204, 247),
+        rgb(177, 68, 164)
+      );
+      padding: 12px 24px;
+      border-radius: 24px;
+      color: rgba(256, 256, 256);
     }
   }
 }
