@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-        <meta property="og:title" content="Longterm income" key="title" />
+        <meta property="og:title" content="Longterm investment" key="title" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -27,7 +27,7 @@ class MyDocument extends Document {
         <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta name='description' content='How to earn passive income during a long term period? How to manage your long term investment? The long term earnings blog give you insights!'/>   
+        <meta name='description' content='How to earn passive income during a long term period? How to manage your long term investment? Find out more about passive income!'/>   
         <base target='_blank' rel="noopener"/>
       </Head>
         <body>
