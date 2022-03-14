@@ -13,40 +13,30 @@ export default function AboutPage() {
           <h3>Why?</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
             I had been looking for useful resources and recent experiences about
-            long term dividend investment - for a friendly passive income. I
-            found that this topic has the fewest resource with real-life
-            experience in the recent years. There are great books written in the
+            long term dividend investment.
+            There are great passive income books written in the
             80s and around the beginning of the new millenial. These usually
             emphasise the passive income and long term investments’ success, but
-            how can people get there? Take tips and trick from me as I would
-            like to share my journey step by step, so maybe after your own
+            how can people get there? Take tips and trick from the community so maybe, after your own
             research you can start to build your own compounding machine!
           </p>
-          <h3>Who is this blog for?</h3>
+          <h3>Who is this community for?</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
-            Hence I am from Europe, I try to give information mostly for
-            Europeans, especially for the younger generation, but feel free to
-            get all the relevant information that may help you succeed. I plan
-            to share platforms used by me that may be not available in the US or
-            the rest of the world, but the backbone of the method is still the
-            same.
+            There is really no limitation about the experience level. I believe that sharing knowledge about 
+            passive income generation is beneficial both for beginners and for experienced investors as well.
+            With more people putting together their ideas, more people can build passive income streams.
           </p>
           <h3>How?</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
             You may wonder how to achieve long term earnings from a few blog
-            posts. I want to share my experience and detailed steps about how I
-            have started this journey and how I pick companies for myself. From
-            this, you can draw your own the consequences.
+            posts. I would like to build a community, from which everyone can benefits how to build passive income streams.
           </p>
           <h3>What do I expect?</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
-            I do not want to predict numbers that will turn out not to be true,
-            and the future is unpredictable - almost. Based on historical data,
-            and the performance of companies during economical crisis, my
-            original plan is to retire at the age of 35. That is ~11 years from
-            now! I can say that with a not so huge amount of saved and invested money on
+            I really hope that more and more people will be aware that relying on the pension system is not a good idea.
+             I can say that with a not so huge amount of saved and invested money on
             a monthly bases people can dramatically help their future self’s
-            financial status.
+            financial status - enjoying the benefits of passive income streams.
           </p>
           <h3>What this blog is not about?</h3>
           <p className={`${styles.limitWidth} ${styles.infoParagraph}`}>
