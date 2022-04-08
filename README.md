@@ -5,3 +5,5 @@ Which actually is a long-term investment blog and community. The page and the co
 # Resources
 
 Some useful resources will be listed here:
+
+Benjamin Graham - The Intelligent Investor
