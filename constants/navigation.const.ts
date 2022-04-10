@@ -4,6 +4,10 @@ export const navigationElements = [
     url: '/posts',
   },
   {
+    displayName: 'Graph',
+    url: '/graph',
+  },  
+  {
     displayName: 'About',
     url: '/about',
   },    

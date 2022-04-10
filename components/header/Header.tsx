@@ -12,7 +12,6 @@ export default function Header({
 }: {
   navigationElements: Array<NavigationElements>;
 }) {
-
   const router = useRouter();
   return (
     <header className={styles.header}>
@@ -39,7 +38,11 @@ export default function Header({
               role="button"
               aria-label={navigationElement.displayName}
               tabIndex={0}
-              className={navigationElement.url === router.pathname ? styles.activeLink : ''}
+              className={
+                navigationElement.url === router.pathname
+                  ? styles.activeLink
+                  : ''
+              }
             >
               {navigationElement.displayName}
             </a>
@@ -47,7 +50,14 @@ export default function Header({
         ))}
       </section>
       <section role="link" className={styles.utilityContainer}>
-        <a className={styles.gradientButton} type='button' role='button' href='https://discord.gg/t4EspcHHdN'>Join Discord</a>
+        <a
+          className={styles.gradientButton}
+          type="button"
+          role="button"
+          href="https://discord.gg/t4EspcHHdN"
+        >
+          Join Discord
+        </a>
       </section>
     </header>
   );

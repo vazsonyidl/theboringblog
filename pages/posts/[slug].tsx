@@ -6,28 +6,32 @@ import { navigationElements } from 'constants/navigation.const';
 import { getAllPosts, getPostBySlug } from 'lib/api';
 import { markdownToHtml } from 'lib/markdownToHtml';
 
-export default function PostDetailPage({post}: any) {
+export default function PostDetailPage({ post }: any) {
   return (
     <>
       <Header navigationElements={navigationElements} />
-      <main>{post ? <PostDetail htmlContent={post?.htmlContent} meta={post?.meta} /> : null}</main>
+      <main>
+        {post ? (
+          <PostDetail htmlContent={post?.htmlContent} meta={post?.meta} />
+        ) : null}
+      </main>
       <Footer />
     </>
   );
 }
 
-export async function getStaticProps({params}: {params: any}) {
-  const {meta, content} = getPostBySlug(params?.slug);
-  
+export async function getStaticProps({ params }: { params: any }) {
+  const { meta, content } = getPostBySlug(params?.slug);
+
   const htmlContent = await markdownToHtml(content || '');
   return {
     props: {
       post: {
         htmlContent,
-        meta: meta
-      }
-    }
-  }
+        meta: meta,
+      },
+    },
+  };
 }
 
 export async function getStaticPaths() {
@@ -39,8 +43,8 @@ export async function getStaticPaths() {
         params: {
           slug: post.slug,
         },
-      }
+      };
     }),
     fallback: false,
-  }
+  };
 }
