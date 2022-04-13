@@ -6,13 +6,13 @@ export const navigationElements = [
   {
     displayName: 'Graph',
     url: '/graph',
-  },  
+  },
   {
     displayName: 'About',
     url: '/about',
-  },    
+  },
   {
     displayName: 'Disclaimer',
     url: '/disclaimer',
-  },  
+  },
 ];

@@ -1,4 +1,4 @@
 export interface NavigationElements {
-    displayName: string;
-    url: string;
+  displayName: string;
+  url: string;
 }

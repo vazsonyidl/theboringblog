@@ -31,10 +31,12 @@ export default function GraphPage() {
   const [period, setPeriod] = useState('ytd');
 
   const fetchDividend = () => {
-    const query = Object.entries({ period, quote }).map(
-      ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-    ).join('&');
+    const query = Object.entries({ period, quote })
+      .map(
+        ([key, value]) =>
+          `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+      )
+      .join('&');
 
     fetch(`/api/dividend?${query}`)
       .then((r) => r.json())

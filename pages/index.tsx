@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Header navigationElements={navigationElements} />
       <main>
-          <HomePageComponent />
+        <HomePageComponent />
       </main>
       <Footer />
     </>
