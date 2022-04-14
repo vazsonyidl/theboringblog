@@ -1,3 +1,12 @@
+import React, { useState } from 'react';
+import {
+  LineChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Line,
+  ResponsiveContainer,
+} from 'recharts';
 import {
   Autocomplete,
   Button,
@@ -7,11 +16,12 @@ import {
   Select,
   TextField,
 } from '@mui/material';
+
+import { GraphService } from '../../services/graph.service';
 import Header from 'components/header/Header';
 import { navigationElements } from 'constants/navigation.const';
-import { useState } from 'react';
-import { LineChart, CartesianGrid, XAxis, YAxis, Line } from 'recharts';
-import { URLSearchParams } from 'url';
+
+import styles from './GraphPAge.module.css';
 
 const quoteOptions = [
   { label: 'Apple', quote: 'AAPL' },
@@ -29,21 +39,12 @@ export default function GraphPage() {
   const [data, setData] = useState(null);
   const [quote, setQuote] = useState('');
   const [period, setPeriod] = useState('ytd');
+  let service = new GraphService();
 
   const fetchDividend = () => {
-    const query = Object.entries({ period, quote })
-      .map(
-        ([key, value]) =>
-          `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-      )
-      .join('&');
-
-    fetch(`/api/dividend?${query}`)
-      .then((r) => r.json())
-      .then((r) => {
-        console.log(r.data);
-        setData(r.data);
-      });
+    service.fetchDividend({ quote, period }).then((response) => {
+      setData(response.data);
+    });
   };
 
   const onQuoteChange = (event, option) => {
@@ -58,51 +59,65 @@ export default function GraphPage() {
     <>
       <Header navigationElements={navigationElements} />
       <main>
-        <section style={{ display: 'flex' }}>
-          <Autocomplete
-            disablePortal
-            id="quoteOptions"
-            options={quoteOptions}
-            sx={{ width: 300 }}
-            onChange={(e, option) => onQuoteChange(e, option)}
-            clearOnEscape
-            renderInput={(props) => (
-              <TextField {...props} label="Select quote" />
-            )}
-          />
+        <section className={styles.content}>
+          <article className={styles.content__searchContainer}>
+            <Autocomplete
+              disablePortal
+              id="quoteOptions"
+              size="small"
+              options={quoteOptions}
+              sx={{ width: 300 }}
+              onChange={(e, option) => onQuoteChange(e, option)}
+              clearOnEscape
+              renderInput={(props) => (
+                <TextField {...props} label="Select quote" />
+              )}
+            />
 
-          <FormControl sx={{ minWidth: 300 }}>
-            <InputLabel id="search-period-length-label">Period</InputLabel>
-            <Select
-              labelId="search-period-length-label"
-              id="search-period-length"
-              label="Period"
-              value={period}
-              onChange={(event) => onPeriodChange(event)}
+            <FormControl sx={{ minWidth: 300 }}>
+              <InputLabel id="search-period-length-label">Period</InputLabel>
+              <Select
+                labelId="search-period-length-label"
+                size="small"
+                id="search-period-length"
+                label="Period"
+                value={period}
+                onChange={(event) => onPeriodChange(event)}
+              >
+                {periodOptions.map((periodOption) => (
+                  <MenuItem key={periodOption.value} value={periodOption.value}>
+                    {periodOption.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <Button
+              variant="contained"
+              className={styles.searchButton}
+              size="medium"
+              disabled={!(!!period && !!quote)}
+              onClick={fetchDividend}
             >
-              {periodOptions.map((periodOption) => (
-                <MenuItem key={periodOption.value} value={periodOption.value}>
-                  {periodOption.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <Button onClick={fetchDividend}>Fetch</Button>
-        </section>
+              Search
+            </Button>
+          </article>
 
-        {data ? (
-          <LineChart
-            width={730}
-            height={250}
-            data={data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="paymentDate" />
-            <YAxis />
-            <Line type="monotone" dataKey="amount" stroke="#8884d8" />
-          </LineChart>
-        ) : null}
+          {data ? (
+            <ResponsiveContainer width="80%" height={300}>
+              <LineChart
+                width={730}
+                height={250}
+                data={data}
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="paymentDate" />
+                <YAxis />
+                <Line type="monotone" dataKey="amount" stroke="#8884d8" />
+              </LineChart>
+            </ResponsiveContainer>
+          ) : null}
+        </section>
       </main>
     </>
   );

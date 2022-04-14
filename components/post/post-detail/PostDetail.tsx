@@ -9,7 +9,10 @@ export default function PostDetail({ htmlContent, meta }: any) {
     <section className={styles.detailContainer}>
       <section>
         <h1 className={styles.title}>{meta.title}</h1>
-        <p className={styles.intro}> <em>{meta.intro}</em></p>
+        <p className={styles.intro}>
+          {' '}
+          <em>{meta.intro}</em>
+        </p>
       </section>
       <section
         className={styles.contentContainer}
