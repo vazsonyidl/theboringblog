@@ -21,7 +21,7 @@ import { GraphService } from '../../services/graph.service';
 import Header from 'components/header/Header';
 import { navigationElements } from 'constants/navigation.const';
 
-import styles from './GraphPAge.module.css';
+import styles from './GraphPage.module.css';
 
 const quoteOptions = [
   { label: 'Apple', quote: 'AAPL' },
