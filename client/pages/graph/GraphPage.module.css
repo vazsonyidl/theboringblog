@@ -1,0 +1,13 @@
+.content {
+}
+
+.content__searchContainer {
+  display: flex;
+  margin: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchButton {
+  align-self: center;
+}
