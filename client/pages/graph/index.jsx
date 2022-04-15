@@ -8,6 +8,8 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import {
+  Alert,
+  AlertTitle,
   Autocomplete,
   Button,
   FormControl,
@@ -17,7 +19,7 @@ import {
   TextField,
 } from '@mui/material';
 
-import { GraphService } from '../../services/graph.service';
+import { GraphService } from 'services/graph.service';
 import Header from 'components/header/Header';
 import { navigationElements } from 'constants/navigation.const';
 
@@ -59,6 +61,13 @@ export default function GraphPage() {
     <>
       <Header navigationElements={navigationElements} />
       <main>
+        <Alert severity="warning" className={styles.alertContainer}>
+          <AlertTitle>Warning</AlertTitle>
+          This feature currently in <em>beta mode.</em>
+          <br />
+          You can play around with it, but the data{' '}
+          <strong>may not be completely correct</strong> during beta mode.
+        </Alert>
         <section className={styles.content}>
           <article className={styles.content__searchContainer}>
             <Autocomplete

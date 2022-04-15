@@ -1,11 +1,12 @@
-.content {
-}
-
 .content__searchContainer {
   display: flex;
   margin: 12px;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.alertContainer {
+  margin: 12px;
 }
 
 .searchButton {
