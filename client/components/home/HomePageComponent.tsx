@@ -7,8 +7,8 @@ export default function HomePageComponent() {
     <section className={styles.homeContainer}>
       <section>
         <h1 className={styles.introText}>
-          <span className={styles.textGradient}>Financial independence </span>
-          made easy.
+          <span className={styles.textGradient}>Financial independence.</span>
+          <p className={styles.type}>Made easy.</p>
         </h1>
         <p className={styles.intoDescription}>
           If you are interested about how to gain control over your financials,
