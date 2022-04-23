@@ -1,42 +1,57 @@
 import fs from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
+import path from 'path';
+import { bundleMDX } from 'mdx-bundler';
 import { isBefore, parse } from 'date-fns';
+import readingTime from 'reading-time';
 
-const postsDir = join(process.cwd(), 'constants/_posts');
+const postsDir = path.join(process.cwd(), 'constants/_posts');
 
-export function getPostBySlug(slug) {
-  const realSlug = slug.replace(/\.md$/, '');
-
-  const path = join(postsDir, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(path, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  return {
-    content,
-    meta: data,
-    slug: realSlug,
-  };
-}
-
-export function getPostSlugs() {
+export function getAllPostSlugs() {
   return fs.readdirSync(postsDir);
 }
 
-export function getAllPosts() {
-  const slugs = getPostSlugs();
+export async function getPostDataBySlug(slug) {
+  const realSlug = slug.replace(/\.mdx$/, '');
+  const fullPath = path.join(postsDir, `${realSlug}.mdx`);
+  const source = fs.readFileSync(fullPath, 'utf-8');
+  const time = readingTime(source).text;
 
+  const { code, frontmatter } = await bundleMDX(
+    { source: source, cwd: process.cwd() },
+    {
+      xdmOptions(options) {
+        options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
+        options.rehypePlugins = [
+          ...(options?.rehypePlugins ?? []),
+          rehypePrism,
+        ];
+        return options;
+      },
+    }
+  );
+
+  return {
+    slug: realSlug,
+    meta: { ...frontmatter, time },
+    code,
+  };
+}
+
+export async function getAllPosts() {
+  const slugs = getAllPostSlugs();
   const parseDate = (date) => parse(date, 'dd.MM.yyyy', new Date());
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .sort((a, b) => {
-      return isBefore(
-        parseDate(a?.meta?.published),
-        parseDate(b?.meta?.published)
-      )
-        ? 1
-        : -1;
-    });
 
+  const posts = Promise.all(slugs.map((slug) => getPostDataBySlug(slug))).then(
+    (posts) => {
+      return posts.sort((a, b) => {
+        return isBefore(
+          parseDate(a?.meta?.published),
+          parseDate(b?.meta?.published)
+        )
+          ? 1
+          : -1;
+      });
+    }
+  );
   return posts;
 }

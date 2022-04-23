@@ -3,17 +3,19 @@ import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 
 import { navigationElements } from 'constants/navigation.const';
-import { getAllPosts, getPostBySlug } from 'lib/api';
-import { markdownToHtml } from 'lib/markdownToHtml';
+import { getAllPosts, getPostDataBySlug } from 'lib/api';
+import { useMemo } from 'react';
+import { getMDXComponent } from 'mdx-bundler/client';
 
-export default function PostDetailPage({ post }: any) {
+export default function PostDetailPage({ meta, code }: any) {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
     <>
       <Header navigationElements={navigationElements} />
       <main>
-        {post ? (
-          <PostDetail htmlContent={post?.htmlContent} meta={post?.meta} />
-        ) : null}
+        <PostDetail meta={meta} code={code}>
+          <Component />
+        </PostDetail>
       </main>
       <Footer />
     </>
@@ -21,27 +23,22 @@ export default function PostDetailPage({ post }: any) {
 }
 
 export async function getStaticProps({ params }: { params: any }) {
-  const { meta, content } = getPostBySlug(params?.slug);
-
-  const htmlContent = await markdownToHtml(content || '');
+  const postData = await getPostDataBySlug(params?.slug);
   return {
     props: {
-      post: {
-        htmlContent,
-        meta: meta,
-      },
+      ...postData,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
 
   return {
-    paths: posts.map((post) => {
+    paths: posts.map((path) => {
       return {
         params: {
-          slug: post.slug,
+          slug: path.slug,
         },
       };
     }),
