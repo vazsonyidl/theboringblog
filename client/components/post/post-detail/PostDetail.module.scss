@@ -8,12 +8,21 @@
   justify-content: center;
   padding: 12px;
 
-  .title {
-    text-align: center;
-  }
+  .titleContainer {
+    justify-self: center;
+  
+    .title {
+      text-align: center;
+    }
+  
+    .intro {
+      text-align: center;
+    }
 
-  .intro {
-    text-align: center;
+    .readTime {
+      font-size: 0.8rem;
+      text-align: end;
+    }
   }
 
   .publishDate {
