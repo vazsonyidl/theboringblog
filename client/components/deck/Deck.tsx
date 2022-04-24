@@ -49,6 +49,7 @@ export default function Deck({ cards }: { cards: Array<any> }) {
           config: { friction: 50, tension: active ? 800 : isGone ? 200 : 500 },
         };
       });
+      
       if (!active && gone.size === cards.length)
         setTimeout(() => {
           gone.clear();
