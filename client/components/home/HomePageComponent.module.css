@@ -1,18 +1,22 @@
 .homeContainer {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: baseline;
   gap: 16px;
   margin: 48px;
+}
+
+.small {
+  font-size: 0.8rem;
 }
 
 .homeContainer > section {
   flex: 1;
 }
 
-.homeContainer .moneyContainer {
+.homeContainer .cardContainer {
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
 .introText {
@@ -24,6 +28,7 @@
 
 .introText .textGradient {
   background: linear-gradient(to right, #30cfd0, #c43ad6);
+  display: block;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -78,9 +83,4 @@
   padding: 12px 24px;
   border-radius: 24px;
   color: rgba(256, 256, 256);
-}
-
-.money {
-  width: 70%;
-  height: 70%;
 }
