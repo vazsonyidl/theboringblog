@@ -53,14 +53,6 @@ export default function HomePageComponent() {
           and be financially independent from day-to-day work, then join this
           community!
         </p>
-        <a
-          className={styles.gradientButton}
-          type="button"
-          role="button"
-          href="https://discord.gg/t4EspcHHdN"
-        >
-          Join Discord
-        </a>
       </section>
       <section className={styles.cardContainer}>
         <Deck cards={dividendFacts} />
