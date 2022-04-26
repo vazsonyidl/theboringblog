@@ -1,16 +1,15 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import { navigationElements as elements } from 'constants/navigation.const';
 import { NavigationElements } from 'interfaces/navigation.interface';
 import Logo from 'public/static/logo.svg';
-import Twitter from 'public/logos/twitter-piano.svg';
 
 import styles from './Header.module.scss';
 
 export default function Header({
-  navigationElements,
+  navigationElements = elements,
 }: {
-  navigationElements: Array<NavigationElements>;
+  navigationElements?: Array<NavigationElements>;
 }) {
   const router = useRouter();
   return (
