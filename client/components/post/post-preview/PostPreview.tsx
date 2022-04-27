@@ -63,8 +63,8 @@ export default function PostPreview({ meta, slug }: PostPreviewProps) {
       </article>
       <StyledIntroAtricle>{meta.intro}</StyledIntroAtricle>
       <article>
-        {meta.tags.map((tag) => (
-          <StyledTagSpan>{tag}</StyledTagSpan>
+        {meta.tags.map((tag, index) => (
+          <StyledTagSpan key={index}>{tag}</StyledTagSpan>
         ))}
       </article>
     </PreviewContainer>

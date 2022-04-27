@@ -10,7 +10,7 @@ export default function PostsList({
     <>
       <section role="table" className={styles.postContainer}>
         {posts.map((post) => (
-          <PostPreview meta={post.meta} slug={post.slug}/>
+          <PostPreview key={post.slug} meta={post.meta} slug={post.slug}/>
         ))}
       </section>
     </>
