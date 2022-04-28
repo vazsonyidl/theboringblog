@@ -1,16 +1,16 @@
-import PostListItem from './post-list-item/PostListItem';
+import PostPreview from '../post-preview/PostPreview';
 import styles from './PostList.module.scss';
 
 export default function PostsList({
   posts,
 }: {
-  posts: Array<{ content: string; meta: any; slug: string }>;
+  posts: Array<{meta: any; slug: string | number}>;
 }) {
   return (
     <>
       <section role="table" className={styles.postContainer}>
         {posts.map((post) => (
-          <PostListItem meta={post.meta} slug={post.slug} key={post.slug} />
+          <PostPreview key={post.slug} meta={post.meta} slug={post.slug}/>
         ))}
       </section>
     </>

@@ -15,7 +15,7 @@
 }
 
 .homeContainer .cardContainer {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
@@ -83,4 +83,10 @@
   padding: 12px 24px;
   border-radius: 24px;
   color: rgba(256, 256, 256);
+}
+
+@media screen and (min-width: 986px){
+  .homeContainer .cardContainer {
+    display: flex;
+  }
 }

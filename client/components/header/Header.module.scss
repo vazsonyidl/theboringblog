@@ -4,7 +4,7 @@
   background-color: $primary-2;
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 48px;
   box-shadow: 0px 1px 2px #e4e5e6;
 
   .utilityContainer,
@@ -48,7 +48,9 @@
 
   .utilityContainer {
     .gradientButton {
-      display: block;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
       width: fit-content;
       line-height: 1;
       border: 0;
@@ -57,9 +59,19 @@
         rgb(136, 204, 247),
         rgb(177, 68, 164)
       );
-      padding: 12px 24px;
       border-radius: 24px;
       color: rgba(256, 256, 256);
+
+      .btnText {
+        padding-inline-end: 6px;
+        display: none;
+      }
     }
+  }
+}
+
+@media screen and (min-width: 986px) {
+  .header .utilityContainer .gradientButton .btnText {
+    display: inline-block;
   }
 }

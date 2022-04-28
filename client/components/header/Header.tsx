@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import { navigationElements as elements } from 'constants/navigation.const';
 import { NavigationElements } from 'interfaces/navigation.interface';
 import Logo from 'public/static/logo.svg';
-import Twitter from 'public/logos/twitter-piano.svg';
+import Discord from 'public/csv/discord.svg';
 
 import styles from './Header.module.scss';
 
 export default function Header({
-  navigationElements,
+  navigationElements = elements,
 }: {
-  navigationElements: Array<NavigationElements>;
+  navigationElements?: Array<NavigationElements>;
 }) {
   const router = useRouter();
   return (
@@ -56,7 +56,10 @@ export default function Header({
           role="button"
           href="https://discord.gg/t4EspcHHdN"
         >
-          Join Discord
+          <span className={styles.btnText}>
+            Join Discord
+          </span>
+          <Discord />
         </a>
       </section>
     </header>
