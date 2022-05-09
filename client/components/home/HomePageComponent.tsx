@@ -11,7 +11,7 @@ const dividendFacts = [
   </blockquote>,
   <blockquote key={2}>
     <em>
-     The true investor... will do better if he forgets about the stock market
+      The true investor... will do better if he forgets about the stock market
       and pays attention to his dividend returns and to the operation results of
       his companies.
     </em>
@@ -19,8 +19,8 @@ const dividendFacts = [
   </blockquote>,
   <blockquote key={3}>
     <em>
-      Only buy something that you&apos;d be perfectly happy to hold if the market
-      shut down for 10 years.
+      Only buy something that you&apos;d be perfectly happy to hold if the
+      market shut down for 10 years.
     </em>
     <p className={styles.small}>Warren Buffett</p>
   </blockquote>,

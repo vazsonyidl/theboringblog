@@ -20,9 +20,7 @@ import {
 } from '@mui/material';
 
 import { GraphService } from 'services/graph.service';
-import Header from 'components/header/Header';
-import { navigationElements } from 'constants/navigation.const';
-
+import withLayout from 'components/withLayout/withLayout';
 import styles from './GraphPage.module.css';
 
 const quoteOptions = [
@@ -37,7 +35,7 @@ const periodOptions = [
   { value: 'ytd', label: 'Year to date' },
 ];
 
-export default function GraphPage() {
+function GraphPage() {
   const [data, setData] = useState(null);
   const [quote, setQuote] = useState('');
   const [period, setPeriod] = useState('ytd');
@@ -58,76 +56,75 @@ export default function GraphPage() {
   };
 
   return (
-    <>
-      <Header navigationElements={navigationElements} />
-      <main>
-        <Alert severity="warning" className={styles.alertContainer}>
-          <AlertTitle>Warning</AlertTitle>
-          This feature currently in <em>beta mode.</em>
-          <br />
-          You can play around with it, but the data{' '}
-          <strong>may not be completely correct</strong> during beta mode.
-        </Alert>
-        <section className={styles.content}>
-          <article className={styles.content__searchContainer}>
-            <Autocomplete
-              disablePortal
-              id="quoteOptions"
+    <main>
+      <Alert severity="warning" className={styles.alertContainer}>
+        <AlertTitle>Warning</AlertTitle>
+        This feature currently in <em>beta mode.</em>
+        <br />
+        You can play around with it, but the data{' '}
+        <strong>may not be completely correct</strong> during beta mode.
+      </Alert>
+      <section className={styles.content}>
+        <article className={styles.content__searchContainer}>
+          <Autocomplete
+            disablePortal
+            id="quoteOptions"
+            size="small"
+            options={quoteOptions}
+            sx={{ width: 300 }}
+            onChange={(e, option) => onQuoteChange(e, option)}
+            clearOnEscape
+            renderInput={(props) => (
+              <TextField {...props} label="Select quote" />
+            )}
+          />
+
+          <FormControl sx={{ minWidth: 300 }}>
+            <InputLabel id="search-period-length-label">Period</InputLabel>
+            <Select
+              labelId="search-period-length-label"
               size="small"
-              options={quoteOptions}
-              sx={{ width: 300 }}
-              onChange={(e, option) => onQuoteChange(e, option)}
-              clearOnEscape
-              renderInput={(props) => (
-                <TextField {...props} label="Select quote" />
-              )}
-            />
-
-            <FormControl sx={{ minWidth: 300 }}>
-              <InputLabel id="search-period-length-label">Period</InputLabel>
-              <Select
-                labelId="search-period-length-label"
-                size="small"
-                id="search-period-length"
-                label="Period"
-                value={period}
-                onChange={(event) => onPeriodChange(event)}
-              >
-                {periodOptions.map((periodOption) => (
-                  <MenuItem key={periodOption.value} value={periodOption.value}>
-                    {periodOption.label}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <Button
-              variant="contained"
-              className={styles.searchButton}
-              size="medium"
-              disabled={!(!!period && !!quote)}
-              onClick={fetchDividend}
+              id="search-period-length"
+              label="Period"
+              value={period}
+              onChange={(event) => onPeriodChange(event)}
             >
-              Search
-            </Button>
-          </article>
+              {periodOptions.map((periodOption) => (
+                <MenuItem key={periodOption.value} value={periodOption.value}>
+                  {periodOption.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <Button
+            variant="contained"
+            className={styles.searchButton}
+            size="medium"
+            disabled={!(!!period && !!quote)}
+            onClick={fetchDividend}
+          >
+            Search
+          </Button>
+        </article>
 
-          {data ? (
-            <ResponsiveContainer width="80%" height={300}>
-              <LineChart
-                width={730}
-                height={250}
-                data={data}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="paymentDate" />
-                <YAxis />
-                <Line type="monotone" dataKey="amount" stroke="#8884d8" />
-              </LineChart>
-            </ResponsiveContainer>
-          ) : null}
-        </section>
-      </main>
-    </>
+        {data ? (
+          <ResponsiveContainer width="80%" height={300}>
+            <LineChart
+              width={730}
+              height={250}
+              data={data}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="paymentDate" />
+              <YAxis />
+              <Line type="monotone" dataKey="amount" stroke="#8884d8" />
+            </LineChart>
+          </ResponsiveContainer>
+        ) : null}
+      </section>
+    </main>
   );
 }
+
+export default withLayout(GraphPage);

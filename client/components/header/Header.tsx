@@ -56,9 +56,7 @@ export default function Header({
           role="button"
           href="https://discord.gg/t4EspcHHdN"
         >
-          <span className={styles.btnText}>
-            Join Discord
-          </span>
+          <span className={styles.btnText}>Join Discord</span>
           <Discord />
         </a>
       </section>
