@@ -85,7 +85,7 @@
   color: rgba(256, 256, 256);
 }
 
-@media screen and (min-width: 986px){
+@media screen and (min-width: 986px) {
   .homeContainer .cardContainer {
     display: flex;
   }
