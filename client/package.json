@@ -7,8 +7,8 @@
     "postbuild": "next export",
     "start": "next start",
     "lint": "next lint",
-    "prettier:check": "prettier --check '**/**/*.{js,jsx,ts,tsx,css}'",
-    "prettier:write": "prettier --write '**/**/*.{js,jsx,ts,tsx,css}'"
+    "prettier:check": "prettier --check '**/**/*.{js,jsx,ts,tsx,css,html}'",
+    "prettier:write": "prettier --write '**/**/*.{js,jsx,ts,tsx,css,html}'"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
